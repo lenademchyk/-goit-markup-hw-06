@@ -2,6 +2,7 @@
   --primary-text-color: #757575;
   --title-text-color: #212121;
   --accent-color: #2196f3;
+  --second-accent-color: #188ce8;
   --main-white-color: #ffffff;
   --primary-bg-color: #2f303a;
   --secondary-bg-color: #f5f4fa;
@@ -45,7 +46,7 @@ ul {
   margin-right: auto;
 }
 
-/* ------прихований заголовок --------  */
+/* ------прихований заголовок / checkbox--------------------  */
 
 .visually-hidden {
   width: 1px;
@@ -61,7 +62,7 @@ ul {
   white-space: nowrap;
 }
 
-/*---------Header--+---Logo-------- */
+/*---------Header--+---Logo--------------------------------- */
 
 .header {
   border-bottom: 1px solid #ececec;
@@ -131,7 +132,7 @@ ul {
   border-radius: 2px;
 }
 
-/* ---------Contacts--------- */
+/* ---------Contacts------------------------------------- */
 
 .contacts-nav {
   display: flex;
@@ -173,7 +174,7 @@ ul {
   transition: fill var(--time-delay) var(--cubic);
 }
 
-/* -------------Hero -------------*/
+/* -------------Hero ----------------------------------------*/
 
 .hero {
   text-align: center;
@@ -221,7 +222,7 @@ ul {
   border-radius: 4px;
   display: inline-block;
 
-  transition-property: #188ce8;
+  transition-property: var(--second-accent-color);
   transition-duration: var(--cubic);
   transition-timing-function: linear;
 
@@ -232,10 +233,10 @@ ul {
 .button-primary:hover,
 .button-primary:focus {
   color: var(--main-white-color);
-  background-color: #188ce8;
+  background-color: var(--second-accent-color);
 }
 
-/* ------------Features--------- */
+/* ------------Features------------------------------------- */
 
 .features.section {
   padding-bottom: 0;
@@ -278,7 +279,7 @@ ul {
   margin-top: 10px;
 }
 
-/* ----------Gallery---+---Team------ */
+/* ----------Gallery---+---Team--------------------------------- */
 
 .item-img {
   margin-right: var(--card-set-gap);
@@ -327,7 +328,7 @@ ul {
   height: 70px;
 }
 
-/* ---------------Team----------- */
+/* ---------------Team------------------------------------ */
 
 .team {
   background-color: var(--secondary-bg-color);
@@ -409,7 +410,7 @@ ul {
   transition: fill var(--time-delay) var(--cubic);
 }
 
-/* ---------------Clients------------- */
+/* ---------------Clients-------------------------------- */
 
 .clients-title {
   color: var(--title-text-color);
@@ -453,7 +454,7 @@ ul {
   margin-right: var(--card-set-gap);
 }
 
-/* ---------------Portfolio--------- */
+/* ---------------Portfolio--------------------------------- */
 
 .portfolio-gallery {
   display: flex;
@@ -538,7 +539,7 @@ ul {
   border-left: 1px solid #eeeeee;
 }
 
-/* ---------Portfolio-----Button */
+/* ---------Portfolio-----Button------------------------------ */
 
 .button-list {
   display: flex;
@@ -582,7 +583,7 @@ ul {
   background-color: var(--accent-color);
 }
 
-/* -------------Footer------------------ */
+/* -------------Footer----------------------------------------- */
 
 .footer {
   background-color: var(--primary-bg-color);
@@ -647,7 +648,7 @@ ul {
   padding-bottom: 60px;
 }
 
-/* -------------Join--------------- */
+/* -------------Join---------------------------------- */
 
 .join-soc-net {
   width: 206px;
@@ -697,7 +698,7 @@ ul {
   margin-left: 10px;
 }
 
-/* ------------Sign-news------------------- */
+/* ------------Sign-news----------------------------------- */
 
 .sign-news {
   padding-top: 72px;
@@ -737,6 +738,7 @@ ul {
 .sign-input ::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .send-btn {
   width: 200px;
   height: 50px;
@@ -749,12 +751,13 @@ ul {
   text-align: center;
   letter-spacing: 0.06em;
   margin-left: 12px;
-  background: #2196f3;
+  background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   color: var(--main-white-color);
-  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
 .sign-btn {
   position: relative;
 }
@@ -766,10 +769,9 @@ ul {
   right: 28px;
   top: 50%;
   transform: translateY(-50%);
-  transition: fill var(--time-delay) var(--cubic);
 }
 
-/* ---------------Modal-------------------- */
+/* ---------------Modal------------------------------------------- */
 
 .backdrop {
   position: fixed;
@@ -947,7 +949,9 @@ ul {
   fill: var(--main-white-color);
 }
 
-/*  з макету не зрозуміло чи потрібен фокус/ховер?? біля соглашаюсь */
+.input-check {
+  transition: border-color var(--time-delay) var(--cubic);
+}
 
 .input-check:focus + .check-conditions span {
   border-color: var(--accent-color);
@@ -972,6 +976,13 @@ ul {
   text-align: center;
   align-items: center;
   color: var(--main-white-color);
+}
+
+.modal-btn:hover {
+  background: var(--second-accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: background var(--time-delay) var(--cubic);
 }
 
 /* ---інші варіанти оформлення галочки погодження з умовами договору */
