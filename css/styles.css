@@ -949,10 +949,9 @@ ul {
 
 /*  з макету не зрозуміло чи потрібен фокус/ховер?? біля соглашаюсь */
 
-/* .input-check:focus + .check-conditions span,
-.input-check:hover + .check-conditions span {
+.input-check:focus + .check-conditions span {
   border-color: var(--accent-color);
-} */
+}
 
 .modal-btn {
   width: 200px;
