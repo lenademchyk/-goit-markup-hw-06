@@ -47,7 +47,7 @@ ul {
 
 /* ------прихований заголовок --------  */
 
-.hidden-title {
+.visually-hidden {
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -647,6 +647,8 @@ ul {
   padding-bottom: 60px;
 }
 
+/* -------------Join--------------- */
+
 .join-soc-net {
   width: 206px;
   padding-top: 72px;
@@ -695,6 +697,80 @@ ul {
   margin-left: 10px;
 }
 
+/* ------------Sign-news------------------- */
+
+.sign-news {
+  padding-top: 72px;
+  padding-bottom: 94px;
+  margin-left: auto;
+}
+
+.sign-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--main-white-color);
+  margin-bottom: 20px;
+}
+
+.sign-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-input {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  color: var(--main-white-color);
+  font-size: 16px;
+  line-height: 1.25;
+  padding-left: 16px;
+}
+
+.sign-input ::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.send-btn {
+  width: 200px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  padding-left: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  margin-left: 12px;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: var(--main-white-color);
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+.sign-btn {
+  position: relative;
+}
+
+.sign-icon {
+  position: absolute;
+  display: inline-block;
+  fill: var(--main-white-color);
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill var(--time-delay) var(--cubic);
+}
+
+/* ---------------Modal-------------------- */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -717,12 +793,11 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
+  padding: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-
   transition: transform var(--time-delay);
 }
 
@@ -736,14 +811,18 @@ ul {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--main-white-color);
   fill: currentColor;
+  transition: fill var(--time-delay) var(--cubic);
 }
 .icon-modal-btn {
   display: inline-block;
   width: 11px;
   height: 11px;
-  /* stroke-width: 0;
-  stroke: currentColor; */
   fill: currentColor;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  fill: var(--accent-color);
 }
 
 .is-hidden {
@@ -757,15 +836,12 @@ ul {
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
-  padding-left: 40px;
-  padding-top: 40px;
-  padding-right: 40px;
   margin-bottom: 12px;
   color: var(--title-text-color);
 }
-.modal-window {
-  padding-left: 40px;
-  padding-right: 40px;
+
+.modal-field {
+  margin-bottom: 10px;
 }
 
 .modal-input {
@@ -773,19 +849,34 @@ ul {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 10px;
-  padding-left: 12px;
+  padding-left: 42px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--time-delay) var(--cubic);
 }
 
-.icon {
+.modal-input:hover,
+.modal-input:focus {
+  border-color: var(--accent-color);
+}
+
+.modal-input:hover + .input-icon,
+.modal-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
   display: inline-block;
-  /* stroke-width: 0;
-  stroke: currentColor; */
-  fill: currentColor;
-}
-
-.modal-input::placeholder {
-  color: red;
+  fill: var(--title-text-color);
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill var(--time-delay) var(--cubic);
 }
 
 .modal-label {
@@ -814,12 +905,61 @@ ul {
 .modal-text::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
+
+.check-conditions {
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  color: var(--primary-text-color);
+  align-items: center;
+  text-align: center;
+}
+
+.check-conditions span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border: radius 2px;
+  margin-right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-icon {
+  fill: transparent;
+}
+
+.policy-conditions {
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--accent-color);
+}
+
+.input-check:checked + .check-conditions span {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 2px;
+}
+
+.input-check:checked + .check-conditions .check-icon {
+  fill: var(--main-white-color);
+}
+
+/*  з макету не зрозуміло чи потрібен фокус/ховер?? біля соглашаюсь */
+
+/* .input-check:focus + .check-conditions span,
+.input-check:hover + .check-conditions span {
+  border-color: var(--accent-color);
+} */
+
 .modal-btn {
   width: 200px;
   height: 50px;
   display: block;
   margin-top: 30px;
-  margin-bottom: 40px;
+
   margin-left: 125px;
   margin-right: 125px;
 
@@ -831,8 +971,24 @@ ul {
   line-height: 1.88;
   letter-spacing: 0.06em;
   text-align: center;
-
   align-items: center;
-
   color: var(--main-white-color);
 }
+
+/* ---інші варіанти оформлення галочки погодження з умовами договору */
+
+/* .check-conditions::before {
+content: "";
+width: 16px;
+height: 15px;
+border: 2px solid red;
+border: radius 3px;
+margin-right: 7px;
+  } */
+
+/* .input-check:checked + .check-conditions::before {
+background-color: var(--accent-color);
+background-image: url(../images/icons.svg#icon-icon-check) ;
+background-repeat: no-repeat;
+background-position:center ;
+  } */
