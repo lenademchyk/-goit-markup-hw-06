@@ -795,7 +795,8 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -815,11 +816,13 @@ ul {
   fill: currentColor;
   transition: fill var(--time-delay) var(--cubic);
 }
+
 .icon-modal-btn {
   display: inline-block;
   width: 11px;
   height: 11px;
   fill: currentColor;
+  align-items: center;
 }
 
 .modal-close-btn:hover,
@@ -844,6 +847,8 @@ ul {
 
 .modal-field {
   margin-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .modal-input {
@@ -889,6 +894,11 @@ ul {
   display: block;
   margin-bottom: 4px;
 }
+
+.modal-comment {
+  padding-left: 40px;
+  padding-right: 40px;
+}
 .modal-text {
   width: 100%;
   min-height: 120px;
@@ -906,6 +916,12 @@ ul {
 
 .modal-text::placeholder {
   color: rgba(117, 117, 117, 0.5);
+}
+.modal-checkbox {
+  padding-left: 54px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  /* padding-right: 51px; */
 }
 
 .check-conditions {
@@ -958,14 +974,9 @@ ul {
 }
 
 .modal-btn {
-  width: 200px;
-  height: 50px;
   display: block;
-  margin-top: 30px;
-
-  margin-left: 125px;
-  margin-right: 125px;
-
+  margin: 0 auto;
+  padding: 10px 51px;
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
